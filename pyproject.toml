@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "task-1"
+version = "0.1.0"
+description = "The project for solving the test task."
+authors = ["Dmitrii, <dima12sik@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.6"
+djangorestframework = "^3.14.0"
+celery = "^5.3.4"
+drf-yasg = "^1.21.7"
+django-celery-beat = "^2.5.0"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.1.0"
+redis = "^5.0.1"
+coverage = "^7.3.2"
+eventlet = "^0.33.3"
+flake8 = "^6.1.0"
+pytils = "^0.4.1"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
