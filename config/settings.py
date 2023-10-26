@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_celery_beat',
     'drf_yasg',
+
+    'file_manager',
 ]
 
 MIDDLEWARE = [
@@ -141,12 +143,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
 
