@@ -124,4 +124,3 @@ class FileListAPIView(FileListAPITestCase):
         self.assertTrue(
             FileModel.objects.count()
         )
-
