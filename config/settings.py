@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-6yhbgw!5mh@u$@v$es&g2k)4x&-us5@@x8pe#ql&ai1yf!)2j%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_celery_beat',
     'drf_yasg',
+
+    'file_manager',
 ]
 
 MIDDLEWARE = [
@@ -141,12 +143,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
-        'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
 
@@ -171,11 +169,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 CELERY_BROKER_URL = os.getenv('LOCATION')
 CELERY_RESULT_BACKEND = os.getenv('LOCATION')
-CELERY_TIMEZONE = 'Australia/Tasmania'
+CELERY_TIMEZONE = 'Europe/Moscow'
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_TASK_ALWAYS_EAGER = True
-
-
-TELEGRAM_API_KEY = os.getenv('TELEGRAM_API_KEY')
-
